@@ -3,7 +3,7 @@ import numpy as np
 import h5py as h5
 
 fname_in='/home/pdeperio/wcte/ryom/fiTQun_tuning/TuningFiles/scattable/fiTQun_scattablesF_nuPRISMBeamTest_16cShort_mPMT.root'
-fname_out='myassfiTQun_scattablesF_nuPRISMBeamTest_16cShort_mPMT.h5'
+fname_out='fiTQun_scattablesF_nuPRISMBeamTest_16cShort_mPMT.h5'
 
 with uproot.open(fname_in) as fin:
     print('Objects:',fin.keys(),'\n')
