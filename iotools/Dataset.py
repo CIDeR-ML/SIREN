@@ -28,9 +28,11 @@ class WCTEScatTable(Dataset):
         self.num_samples_per_load = num_samples_per_load
         self.table_shape = None
         if self.regionname == 'sidescattable':
-            self.tableshape = (35, 16, 16, 16, 16, 16)
+            #self.tableshape = (35, 16, 16, 16, 16, 16)
+            self.tableshape = (16, 16, 16, 16, 16, 35)
         else:
-            self.tableshape = (35, 16, 8, 16, 16, 16)        
+            #self.tableshape = (35, 16, 8, 16, 16, 16)        
+            self.tableshape = (16, 16, 16, 8, 16, 35)        
         
 
     def __len__(self): 
@@ -50,6 +52,5 @@ class WCTEScatTable(Dataset):
         assert self.tableshape is not None
         dataset_reshaped = np.array(self.dataset.reshape(self.tableshape))
         unrav_indices = np.array(np.unravel_index(index, self.tableshape)).T
-        
         return unrav_indices, datasets
 
